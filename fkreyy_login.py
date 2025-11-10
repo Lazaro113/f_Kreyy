@@ -1,4 +1,5 @@
 import os
+import sys
 
 def clearscreen():
     os.system("clear")
@@ -15,14 +16,16 @@ class loginfkrey:
         print("     \|_______|\|_______|\|_______|\|__|\|__| \|__|  ")        
         print("")
         while True:
+            try:
                 escolha = input("Digite sua senha: ")
                 if escolha == "91939":
-                    print("Acesso Permitido!!!")
+                    print("AcessoPermitido")
                     break
-                else:
-                    print("Acesso Negado!!!")                    
-                    os.kill()
-                    clearscreen()
+
+            except KeyboardInterrupt:
+                print("AcessoNegado")
+                sys.exit()
+                
 loginfkrey.loginkf()
     
 
