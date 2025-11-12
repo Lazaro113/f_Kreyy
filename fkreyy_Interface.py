@@ -1,11 +1,11 @@
+from multiprocessing import Value
 import os
-import fkreyy_codigo
 import sys
+from utils.portscanner import fkreyyPorts
+
 
 def clear_screen():
     os.system("clear")
-
-fkc = None
 
 class fkInterface:
     clear_screen()
@@ -21,104 +21,129 @@ class fkInterface:
         print("╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝╚═╝   ")
         print("")
         print("=========================================")
-        print("1 - Scanners")
-        print("2 - Servidor")
-        print("3 - Phishing")
-        print("4 - IP")
-        print("5 - Discord")
-        print("6 - Ddos")
-        print("7 - Brute force")
-        print("8 - Keylogger")
-        print("9 - Malwares")
+        print("01 - Scanners")
+        print("02 - Servidor")
+        print("03 - Phishing")
+        print("04 - IP")
+        print("05 - Discord")
+        print("06 - Ddos")
+        print("07 - Brute force")
+        print("08 - Keylogger")
+        print("09 - Malwares")
         print("10 - Botnet")
         print("0 - Sair")
         print("12 - Sair do Programa")
         print("")
 
-
-        def Scanners():
-                print("SCANNNERS DISPONIVEIS: ")
-                print("")
-                print("1 - NMAP")
-                print("2 - METASPLOITS")
-                print("3 - NETCAT")
-                print("4 - HYDRA")
-                print("5 - JOHN THE RIPPER")
-                print("6 - AIRCRACK-NG")
-                print("7 - WIRESHARK")
-                print("8 - WIFI PINEAPPLE")
-                print("0 - SAIR")
-
-
-        def Server():
-                print("SERVIDORES DISPONIVEIS:")
-                print("")
-                print("1 - TCP")
-                print("2 - UDP")
-                print("3 - VPN")
-                print("4 - LOCALHOST")
-                
-
-        def Phinshing():
-                print("PHISHINGS DISPONIVEIS: ")
-                print("1 - DISCORD")
-                print("2 - ")
-                print("")
-                print("")
-                print("")
-                print("")
-                print("")
-                print("")
-                print("")
-                print("")
-                
-
-        
         while True:
             try:
                 escolha_menu = int(input("Selecione: "))
-                
-            except KeyboardInterrupt:
+                        
+            except ValueError:
                 print("Interrompido")
                 sys.exit()
-                clear_screen()
-                continue
-            
+                
+                
             if escolha_menu == 0:
                 print("Saindo...")
                 clear_screen()
                 return fkInterface.menu()
-            
+                
             elif escolha_menu == 12:
-                   sys.exit()
+                sys.exit()
 
             elif escolha_menu == 0o1:
-                    clear_screen()
-                    Scanners()
+                clear_screen()
+                fkInterface.Scanners()
 
             elif escolha_menu == 0o2:
-                    clear_screen()
-                    Server()
-
+                clear_screen()
+                fkInterface.Server()
 
             elif escolha_menu == 0o3:
-                    clear_screen()
-                    Phinshing()
-                 
+                clear_screen()
+                fkInterface.Phinshing()
+                     
             elif escolha_menu == 0o4: 
-                    clear_screen()
+                clear_screen()
 
             elif escolha_menu == 0o5:
-                    clear_screen()
+                clear_screen()
 
             elif escolha_menu == 0o6:
-                    clear_screen()
-                
+                clear_screen()
+                    
             elif escolha_menu == 0o7:
+                clear_screen()
+            
+            elif escolha_menu == 8:
+                clear_screen()
+
+            elif escolha_menu == 9:
+                clear_screen()
+
+    def Scanners():
+        print("===========================")
+        print("SCANNNERS DISPONIVEIS: ")
+        print("===========================")
+        print("")
+        print("01 - NMAP")
+        print("02 - METASPLOITS")
+        print("03 - NETCAT")
+        print("04 - HYDRA")
+        print("05 - JOHN THE RIPPER")
+        print("06 - AIRCRACK-NG")
+        print("07 - WIRESHARK")
+        print("08 - WIFI PINEAPPLE")
+        print("0 - SAIR")
+
+        while True:
+            try:
+                e_scanner = int(input("Selecione: "))
+                
+            except:
+                print("DeuRuim")
+
+            match e_scanner:
+                case 0:
+                    print("Saindo....")
                     clear_screen()
-            
-            
-            
+                    fkInterface.menu()
+
+                case 1:
+                    clear_screen()
+                    scanner = fkreyyPorts()  
+                    scanner.portscanners()
+                    
+                    
+
+
+    def Server():
+        print("===========================")
+        print("SERVIDORES DISPONIVEIS:")
+        print("===========================")
+        print("")
+        print("01 - TCP")
+        print("02 - UDP")
+        print("03 - VPN")
+        print("04 - LOCALHOST")
+                
+
+    def Phinshing():
+        print("===========================")
+        print("PHISHINGS DISPONIVEIS: ")
+        print("===========================")
+        print("01 - DISCORD")
+        print("02 - ")
+        print("")
+        print("")
+        print("")
+        print("")
+        print("")
+        print("")
+        print("")
+        print("")
+                
 
 #---------------------------------------------------------
 
