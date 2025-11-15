@@ -2,6 +2,7 @@ from multiprocessing import Value
 import os
 import sys
 from utils.portscanner import fkreyyPorts
+from utils.brute_dns import ResolverDNS
 
 
 def clear_screen():
@@ -75,6 +76,8 @@ class fkInterface:
                     
             elif escolha_menu == 0o7:
                 clear_screen()
+                fkInterface.Brute_Force()
+                
             
             elif escolha_menu == 8:
                 clear_screen()
@@ -102,7 +105,7 @@ class fkInterface:
                 e_scanner = int(input("Selecione: "))
                 
             except:
-                print("DeuRuim")
+                print("Error...")
 
             match e_scanner:
                 case 0:
@@ -114,6 +117,9 @@ class fkInterface:
                     clear_screen()
                     scanner = fkreyyPorts()  
                     scanner.portscanners()
+
+                
+
                     
                     
 
@@ -143,6 +149,34 @@ class fkInterface:
         print("")
         print("")
         print("")
+    
+    def Brute_Force():
+        print("===========================")
+        print("BRUTE FORCE'S DISPONIVEIS")
+        print("===========================")
+        print("01 - DNS RESOLVER")
+        print("")
+        print("")
+        print("")
+        print("")
+
+        while True:
+            try:
+                e_bruteforce = int(input("Selecione: "))
+
+            except:
+                print("Erro.")
+
+            match e_bruteforce:
+                case 0:
+                    print("Saindo...")
+                    fkInterface.menu()
+                    clear_screen()
+
+                case 1:
+                    clear_screen()
+                    ResolverDNS.dnsbruto()
+
                 
 
 #---------------------------------------------------------
