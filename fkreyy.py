@@ -1,11 +1,11 @@
-import fkreyy_login
+import login.fkreyy_login
 import fkreyy_Interface
-import scanners.portscanner
+import utils.portscanner
 
-liro = scanners.fkreyyPorts
+liro = utils.fkreyyPorts
 
 fk = fkreyy_Interface.fkInterface
-fkl = fkreyy_login.loginfkrey
+fkl = login.fkreyy_login.loginfkrey
 fkl.loginkf()
 fk.menu()
 liro.portscanners()      

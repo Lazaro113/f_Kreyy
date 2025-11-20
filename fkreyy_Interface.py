@@ -1,19 +1,31 @@
 from multiprocessing import Value
 import os
 import sys
+import time
 from utils.portscanner import fkreyyPorts
+from tqdm import tqdm
 from utils.brute_dns import ResolverDNS
+
 
 
 def clear_screen():
     os.system("clear")
+
+def loading():
+    print("Iniciando processo...")
+
+    
+    for i in tqdm(range(10)):
+        time.sleep(1.0)  
+
+    print("Processo finalizado!")
 
 class fkInterface:
     clear_screen()
 
     def menu():
         print("=========================================")  # menu principal
-        print("")
+        print()
         print("██╗  ██╗   ██████╗    ███████╗██╗   ██╗")
         print("██║ ██╔╝   ██╔══██╗   ██╔════╝╚██╗ ██╔╝")
         print("█████╔╝    ██████╔╝   █████╗   ╚████╔╝ ")
@@ -21,19 +33,20 @@ class fkInterface:
         print("██║  ██╗██╗██║  ██║██╗███████╗██╗██║   ")
         print("╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝╚══════╝╚═╝╚═╝   ")
         print("")
-        print("=========================================")
-        print("01 - Scanners")
-        print("02 - Servidor")
-        print("03 - Phishing")
-        print("04 - IP")
-        print("05 - Discord")
-        print("06 - Ddos")
-        print("07 - Brute force")
-        print("08 - Keylogger")
-        print("09 - Malwares")
-        print("10 - Botnet")
-        print("0 - Sair")
-        print("12 - Sair do Programa")
+        print("(=========================================)")
+        print("")
+        print("[ 01 ] - Scanners")
+        print("[ 02 ] - Servidor")
+        print("[ 03 ] - Phishing")
+        print("[ 04 ] - IP")
+        print("[ 05 ] - Discord")
+        print("[ 06 ] - Ddos")
+        print("[ 07 ] - Brute force")
+        print("[ 08 ] - Keylogger")
+        print("[ 09 ] - Malwares")
+        print("[ 10 ] - Botnet")
+        print("[ 12 ] - Sair do Programa")
+        print("[ 0 ] - Sair")
         print("")
 
         while True:
@@ -140,9 +153,9 @@ class fkInterface:
         print("PHISHINGS DISPONIVEIS: ")
         print("===========================")
         print("01 - DISCORD")
-        print("02 - ")
-        print("")
-        print("")
+        print("02 - GMAIL ")
+        print("03 - YOUTUBE")
+        print("04 - ")
         print("")
         print("")
         print("")
